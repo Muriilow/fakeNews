@@ -1,4 +1,4 @@
-public class Player extends Entity 
+public class Player extends Entity implements Movement
 {
     private Item[] itens;
     private GameManager manager;
@@ -9,25 +9,25 @@ public class Player extends Entity
 
     public Player(int posX, int posY, GameManager manager)
     {
-        super(posx, posY);
+        super(posX, posY);
         this.manager = manager;
         itens = new Item[];
     }
 
-    public Walk(Direction direction)
+    public void Walk(Direction direction)
     {
         switch(direction)
         {
-            case Direction.UP:
+            case UP:
                 posY++;
                 break;
-            case Direction.DOWN:
+            case DOWN:
                 posY--;
                 break;
-            case Direction.LEFT:
+            case LEFT:
                 posX--;
                 break;
-            case Direction.RIGHT:
+            case RIGHT:
                 posX++;
                 break;
         }
